@@ -1169,6 +1169,450 @@ button:focus-visible {
     margin: 0 4px;
   }
   
+
+  /* ==========================================================================
+   7. CONTACT SECTION (Split Layout & Form Processing Panel)
+   ========================================================================== */
+.contact-section {
+  width: 100%;
+  background-color: #ededed; /* Soft light gray backdrop matching the screenshot */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 650px;
+  margin: 0 auto;
+}
+
+/* --- Left Image Panel --- */
+.contact-image-pane {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-image-pane img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+}
+
+/* --- Right Form Panel --- */
+.contact-form-pane {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 80px 60px 60px;
+  position: absolute;
+  width: 100%;
+  margin-left: 30rem;
+}
+
+/* The clean floating card container */
+.contact-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 780px;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+
+}
+
+.contact-heading {
+  font-family: "Inter", "Montserrat", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 40px 0;
+  letter-spacing: -0.01em;
+}
+
+/* --- Form Field Components --- */
+.contact-form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+/* Input & Textarea Elements Alignment */
+.contact-form-element input,
+.contact-form-element textarea {
+  width: 100%;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus styles for clean accessibility metrics */
+.contact-form-element input:focus,
+.contact-form-element textarea:focus {
+  outline: none;
+  border-color: #fa8f73; /* Accents nicely into your brand colors */
+  box-shadow: 0 0 0 3px rgba(250, 143, 115, 0.15);
+}
+
+/* Placeholder font weight styling adjustments */
+.contact-form-element input::placeholder,
+.contact-form-element textarea::placeholder {
+  color: #777777;
+  font-weight: 500;
+}
+
+.contact-form-element textarea {
+  resize: vertical;
+}
+
+/* --- Black Solid Action Button --- */
+.contact-btn-submit {
+  align-self: flex-start;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 45px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.contact-btn-submit:hover {
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   8. SITE FOOTER SECTION (Modern Black Matte Layout Theme)
+   ========================================================================== */
+   .site-footer {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* --- Upper Tier: Newsletter Section --- */
+  .footer-newsletter-row {
+    border-bottom: 1px solid #1a1a1a;
+    padding: 60px 0;
+  }
+  
+  .newsletter-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .newsletter-heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+  }
+  
+  .newsletter-subtext {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #999999;
+    margin: 0;
+    max-width: 520px;
+  }
+  
+  /* Dark Input Field Shell */
+  .newsletter-form {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+  }
+  
+  .newsletter-form input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #2d2d2d;
+    border-radius: 6px;
+    padding: 16px 60px 16px 24px;
+    font-size: 14px;
+    color: #ffffff;
+    transition: border-color 0.2s ease;
+  }
+  
+  .newsletter-form input:focus {
+    outline: none;
+    border-color: #fa8f73;
+  }
+  
+  .newsletter-form input::placeholder {
+    color: #666666;
+  }
+  
+  .newsletter-submit-btn {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .newsletter-submit-btn:hover {
+    color: #fa8f73;
+  }
+  
+  .newsletter-submit-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* --- Middle Tier: Informational Link Matrix --- */
+  .footer-main-content {
+    padding: 80px 0;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 1.2fr;
+    gap: 60px;
+  }
+  
+  .footer-logo {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin: 0 0 25px 0;
+  }
+  
+  .footer-brand-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #888888;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .footer-col-heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin: 10px 0 30px 0;
+  }
+  
+  /* Navigation Lists Layout */
+  .footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .footer-links-list a {
+    color: #888888;
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-links-list a:hover {
+    color: #ffffff;
+  }
+  
+  /* Metadata Contact Field Stacks */
+  .footer-contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  
+  .footer-contact-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .contact-icon {
+    color: #ffffff;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  
+  .contact-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-text-lines {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #888888;
+  }
+  
+  .contact-text-lines a {
+    color: #888888;
+    text-decoration: none;
+  }
+  
+  .contact-text-lines a:hover {
+    color: #ffffff;
+  }
+  
+  /* --- Bottom Tier: Copyright & Social Assets bar --- */
+  .footer-baseline {
+    border-top: 1px solid #1a1a1a;
+    padding: 30px 0;
+  }
+  
+  .baseline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .copyright-txt {
+    font-size: 12px;
+    color: #555555;
+  }
+  
+  .partner-accent {
+    color: #777777;
+  }
+  
+  /* Inline FontAwesome / Font Icon Vector Groups */
+  .footer-socials {
+    display: flex;
+    gap: 22px;
+  }
+  
+  .footer-socials a {
+    color: #777777;
+    font-size: 14px;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-socials a:hover {
+    color: #ffffff;
+  }
+  
+  /* ==========================================================================
+     RESPONSIVE MEDIA CONTROLS
+     ========================================================================== */
+  @media (max-width: 1024px) {
+    .newsletter-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      text-align: center;
+    }
+  
+    .newsletter-form {
+      margin: 0 auto;
+    }
+  
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  
+    .footer-col-heading {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .baseline-container {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr; /* Switch to stack structure */
+  }
+
+  .contact-image-pane {
+    height: 400px; /* Restricts vertical growth on mobile screen heights */
+  }
+
+  .contact-form-pane {
+    padding: 40px 20px;
+    justify-content: center;
+  }
+
+  .contact-card {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row-split {
+    grid-template-columns: 1fr; /* Inputs drop down to singular column */
+    gap: 20px;
+  }
+
+  .contact-heading {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+} 
+
+
+
+
   /* --- Responsive Layout Breaks --- */
   @media (max-width: 900px) {
     /* Collapse avatar grid spacing limits on mid-tier viewports */
