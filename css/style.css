@@ -864,6 +864,7 @@ button:focus-visible {
     border-radius: 12px;
     padding: 80px 30px 180px 30px; /* Big bottom padding gives space for overlapping layout cards */
     text-align: center;
+    height: 70vh;
   }
   
   .features-main-heading {
@@ -884,7 +885,7 @@ button:focus-visible {
     width: 100%;
     max-width: 1140px;
     padding: 0 40px;
-    margin-top: -120px; /* Pulls cards layout clean up over grey header panel base layer */
+    margin-top: -268px; /* Pulls cards layout clean up over grey header panel base layer */
     position: relative;
     z-index: 5;
   }
@@ -979,6 +980,260 @@ button:focus-visible {
     opacity: 0.9;
     font-weight: 400;
   }
+
+/* ==========================================================================
+   6. TESTIMONIALS SECTION (Section 5 - Wave Avatar Grid System)
+   ========================================================================== */
+   .reviews-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* --- Top Grid Architecture --- */
+  .reviews-avatar-cloud {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 60px;
+    padding-top: 40px;
+  }
+  
+  .cloud-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Height Modulation Classes to simulate staggered screenshot curves */
+  .col-high {
+    transform: translateY(-25px);
+  }
+  
+  .col-low {
+    transform: translateY(25px);
+  }
+  
+  /* Custom Individual Box Structs */
+  .cloud-box {
+    width: 100%;
+    aspect-ratio: 1 / 1.15; /* Proportional taller framing for card bounds */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .blank-box {
+    background-color: #f6f6f6;
+    aspect-ratio: 1 / 1; /* Pure square layout rules for blank grid headers */
+  }
+  
+  .portrait-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .box1{
+    height: 30px;
+  }
+  .box2{
+    height: 40px;
+  }
+  .box3{
+    height: 50px;
+  }
+  .box4{
+    height: 30px;
+  }
+  .box5{
+    transform: skewY(-7deg);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 120px;
+  }
+  /* Central Overlay Heading Style */
+  .reviews-section-title {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Montserrat", sans-serif;
+    font-size:60px;
+    font-weight: 600;
+    color: #1a1a1a;
+    padding: 10px 40px;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+  /* --- Bottom Slider Elements --- */
+  .reviews-slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 680px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .active-reviewer-avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .active-reviewer-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .reviews-quote {
+    font-family: "inter", sans-serif;
+    font-size: 21px;
+    line-height: 1.5;
+    color: #060606;
+    margin: 0 0 25px 0;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .reviews-author-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 45px;
+  }
+  
+  .reviewer-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    font-style: normal;
+  }
+  
+  .reviewer-role {
+    font-size: 11.5px;
+    color: #000000;
+    font-weight: 600;
+  }
+  
+  /* --- Interactive Navigation Bar Element --- */
+  .reviews-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .rev-arrow {
+    background: transparent;
+    border: none;
+    color: #798ea3;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.2s ease;
+  }
+  
+  .rev-arrow:hover {
+    color: #000000;
+  }
+  
+  .rev-pagination {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #b0bac5;
+    letter-spacing: 0.5px;
+  }
+  
+  .rev-pagination .rev-current {
+    color: #000000;
+  }
+  
+  .rev-pagination .rev-divider {
+    margin: 0 4px;
+  }
+  
+  /* --- Responsive Layout Breaks --- */
+  @media (max-width: 900px) {
+    /* Collapse avatar grid spacing limits on mid-tier viewports */
+    .reviews-avatar-cloud {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+    
+    /* Hide excessive column edge counts to protect visual spacing clarity */
+    .cloud-col:nth-child(ef),
+    .cloud-col:nth-child(1),
+    .cloud-col:nth-child(9) {
+      display: none;
+    }
+    
+    .reviews-section-title {
+      font-size: 2.2rem;
+      padding: 6px 20px;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    .reviews-avatar-cloud {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .cloud-col:nth-child(2),
+    .cloud-col:nth-child(8) {
+      display: none;
+    }
+  
+    .reviews-quote {
+      font-size: 13.5px;
+      line-height: 1.7;
+      padding: 0 15px;
+    }
+  }
+
+/* --- RESPONSIVE DOWNGRADES FOR SMALLER SCREENS --- */
+@media (max-width: 1024px) {
+  .reviews-avatar-cloud {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  /* Remove far out edge columns to protect grid density on small monitors */
+  .col-pos-1, .col-pos-2, .col-pos-8, .col-pos-9 {
+    display: none;
+  }
+  .reviews-section-title {
+    top: 85%;
+  }
+  .reviews-slider-content {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-avatar-cloud {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .col-pos-3, .col-pos-7 {
+    display: none;
+  }
+}
+  
   
   /* ==========================================================================
      6. RESPONSIVE CARDS MEDIA CONTROLS
