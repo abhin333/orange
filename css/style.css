@@ -28,9 +28,9 @@ body {
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--text-primary);
- background-image: url("../images/backgroundimage.png");
+  background-image: url("../images/backgroundimage.png");
 
-  background-size:fill;
+  background-size: fill;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -79,16 +79,28 @@ body {
   text-transform: uppercase;
 
   white-space: nowrap;
+  margin-left: -57px;
 }
 
 /* NAVBAR */
+
 .desktop-nav {
-  margin-left: auto;
+  width: 428px;
+  height: 19px;
 
   display: flex;
   align-items: center;
 
-  gap: 34px;
+  gap: 38px;
+
+  margin-left: auto;
+
+  position: relative;
+
+  top: 0px;
+  left: 0;
+
+  opacity: 1;
 }
 
 .desktop-nav a,
@@ -103,6 +115,8 @@ body {
   letter-spacing: 0.08em;
 
   transition: 0.3s ease;
+
+  white-space: nowrap;
 }
 
 .desktop-nav a:hover,
@@ -184,15 +198,15 @@ body {
 /* LEFT CONTENT */
 .hero-copy {
   max-width: 540px;
-  margin-top: 7rem;
-  margin-left: 3rem;
+  margin-top: 3rem;
+  margin-left: 0rem;
   position: absolute;
-
+  z-index: 1;
 }
 
 /* TITLE */
 .hero-copy h1 {
-  margin-left:66px;
+  margin-left: 66px;
   line-height: 0.9;
 }
 
@@ -207,6 +221,7 @@ body {
 .hero-copy h1 .heavy {
   font-weight: 900;
   margin-right: 20px;
+  font-family: "Inter", sans-serif;
 }
 
 /* DESCRIPTION */
@@ -216,17 +231,16 @@ body {
   color: var(--text-soft);
   font-size: 13px;
   line-height: 1.6;
-  margin-left:66px;
-
+  margin-left: 66px;
 }
 .hero-girl img {
- width: 60%;
- height: 100vh;
- object-fit: fill;
- position: absolute;
- top: 1px;
- left: 431px;
-mix-blend-mode: hard-light;
+  width: 63%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  left: 460px;
+  mix-blend-mode: hard-light;
 }
 
 /* BUTTON */
@@ -244,6 +258,18 @@ mix-blend-mode: hard-light;
   font-size: 12px;
   font-weight: 700;
   transition: 0.3s ease;
+  margin-left: 66px;
+}
+
+.white-line hr {
+  top: 881px;
+  opacity: 1;
+  border-width: 1px;
+
+  background-color: white;
+  width: 100vw;
+  margin-left: calc(100% - 43vw);
+  opacity: 0.8;
 }
 
 .primary-cta:hover {
@@ -253,59 +279,48 @@ mix-blend-mode: hard-light;
 /* VIDEO CARD */
 .video-card {
   position: relative;
-
+  min-height: 182px;
   width: 100%;
-  max-width: 360px;
-
+  max-width: 260px;
   justify-self: end;
-
   padding: 12px;
-
   border-radius: 10px;
-
   border: 1px solid var(--panel-border);
-
   background: var(--panel-bg);
-
   backdrop-filter: blur(4px);
-
   box-shadow: var(--shadow-soft);
-
   overflow: hidden;
+  top: 5rem;
+  left: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically */
+  align-items: center;     /* Centers horizontally */
 }
 
 /* IMAGE */
 .video-card img {
   width: 100%;
-  display: block;
-
   border-radius: 8px;
-
   aspect-ratio: 16 / 9;
-
-  object-fit: cover;
+  object-fit:cover;
+  display: block;
+ 
 }
 
 /* PLAY BUTTON */
 .play-button {
   position: absolute;
-
   inset: 0;
   margin: auto;
-
   width: 72px;
   height: 72px;
-
   border: none;
   border-radius: 50%;
-
   background: rgba(255, 255, 255, 0.88);
-
   display: grid;
   place-items: center;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 }
 
@@ -326,39 +341,46 @@ mix-blend-mode: hard-light;
 }
 
 /* SLIDER CONTROLS */
-.hero-controls {
-  margin-left: auto;
-
+.bottom-actions {
+  width: 100%;
+  max-width: 1400px;
+  height: 69px;
+  margin: 0 auto;
+  padding: 0 30px;
   display: flex;
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 12px 18px;
-
-  border-radius: 999px;
-
-  border: 1px solid var(--panel-border);
-
-  background: rgba(255,255,255,0.05);
-
-  margin-bottom: 25px;
+  align-items: flex-start; /* Aligns both the button and the dots wrapper to the very top */
+  justify-content: space-between;
+  position: relative;
+  bottom: 4rem;
 }
 
-/* DOTS */
+.bottom-actions .primary-cta {
+  margin: 0;
+  /* Optional: Add line-height or padding here if you need the text inside the button to match the height of the dots container */
+}
+
+.hero-controls {
+  display: flex;
+  align-items: center; /* Keeps the dots and arrows centered vertically INSIDE the pill */
+  justify-content: center;
+  gap: 10px;
+  width: 206px;
+  height: 49px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: rgba(255, 255, 255, 0.05);
+  margin: 0;
+}
+
 .dot {
   width: 10px;
   height: 10px;
-
   border-radius: 50%;
-
   border: none;
-
-  background: rgba(255,255,255,0.5);
-
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
-
 .dot.active {
   background: #fff;
 }
@@ -384,7 +406,6 @@ button:focus-visible {
 
 /* TABLET */
 @media (max-width: 920px) {
-
   .desktop-nav,
   .icon-button {
     display: none;
@@ -424,14 +445,9 @@ button:focus-visible {
 
 /* MOBILE */
 @media (max-width: 560px) {
-
   .container {
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  .brand {
-    font-size: 2rem;
   }
 
   .hero-copy h1 span {
