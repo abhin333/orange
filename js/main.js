@@ -16,3 +16,12 @@ dots.forEach((dot) => {
     dot.classList.add("active");
   });
 });
+
+const menuBtn = document.querySelector(".mobile-menu-toggle");
+const desktopNav = document.querySelector(".desktop-nav");
+
+if (menuBtn && desktopNav) {
+  menuBtn.addEventListener("click", () => {
+    desktopNav.classList.toggle("show");
+  });
+}
